@@ -1,0 +1,44 @@
+.page { display: flex; flex-direction: column; gap: 24px; max-width: 680px; }
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.subtitle { font-size: 0.9375rem; color: var(--text-secondary); }
+
+.formCard { animation: fadeIn 0.35s ease; }
+
+.alert { margin-bottom: 20px; }
+
+.form { display: flex; flex-direction: column; gap: 18px; }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 540px) {
+  .row { grid-template-columns: 1fr 1fr; }
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

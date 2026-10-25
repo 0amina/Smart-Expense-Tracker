@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.vite/
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+*.pem
+*.key
+secrets/
+.DS_Store
+Thumbs.db

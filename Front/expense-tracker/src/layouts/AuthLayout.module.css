@@ -1,0 +1,127 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+@media (min-width: 900px) {
+  .root { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Left brand panel ── */
+.brand {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 70%, rgba(196,97,42,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@media (min-width: 900px) { .brand { display: flex; } }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.logoMark {
+  width: 44px; height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  color: var(--bg);
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(249,246,240,0.65);
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* ── Feature list ── */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeIn 0.5s ease both;
+}
+
+.feature:nth-child(1) { animation-delay: 0.05s; }
+.feature:nth-child(2) { animation-delay: 0.15s; }
+.feature:nth-child(3) { animation-delay: 0.25s; }
+.feature:nth-child(4) { animation-delay: 0.35s; }
+
+.featureIcon {
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.feature span:last-child {
+  font-size: 0.9375rem;
+  color: rgba(249,246,240,0.8);
+  font-weight: 400;
+}
+
+/* ── Right form panel ── */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

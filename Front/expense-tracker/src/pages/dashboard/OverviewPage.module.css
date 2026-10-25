@@ -1,0 +1,173 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.subheading { font-size: 0.9375rem; color: var(--text-secondary); }
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .statsGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.statCard { animation: fadeIn 0.4s ease both; }
+
+.statTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.statIcon { font-size: 1.375rem; }
+
+.trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+.trendUp   { background: var(--red-light);   color: var(--red); }
+.trendDown { background: var(--green-light); color: var(--green); }
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+}
+.capitalize { text-transform: capitalize; }
+
+.statLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.statSub { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Section */
+.section { display: flex; flex-direction: column; gap: 14px; }
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.seeAll {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.seeAll:hover { color: var(--accent-hover); }
+
+/* Expense list */
+.expenseList { display: flex; flex-direction: column; gap: 10px; }
+
+.expenseCard {
+  animation: fadeIn 0.4s ease both;
+}
+
+.expenseRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.expenseCategoryIcon {
+  font-size: 1.375rem;
+  width: 44px; height: 44px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.expenseInfo { flex: 1; min-width: 0; }
+
+.expenseTitle {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.expenseMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.expenseDate { font-size: 0.75rem; color: var(--text-muted); }
+
+.expenseAmount {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Empty */
+.empty {
+  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.emptyIcon { font-size: 2.5rem; }
+.empty p { color: var(--text-secondary); font-size: 0.9375rem; }
+.emptyLink { color: var(--accent); font-weight: 500; }
+
+.headerActions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.income { color: var(--green); }
+.expense { color: var(--red); }
+
+.budgetCard { animation: fadeIn 0.4s ease; }
+.budgetHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.budgetLabel { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+.budgetStatus { font-size: 0.8125rem; font-weight: 600; text-transform: capitalize; }
+.budgetTrack { height: 8px; background: var(--bg-subtle); border-radius: var(--radius-full); overflow: hidden; margin-bottom: 8px; }
+.budgetFill { height: 100%; border-radius: var(--radius-full); transition: width 0.6s ease; }
+.budgetMeta { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
